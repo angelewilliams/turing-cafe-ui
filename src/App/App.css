@@ -13,7 +13,8 @@
 }
 
 .app-title {
-  color: teal;
+  color: #b2d8d8;
+  /* -webkit-text-stroke: .2px #004c4c; */
   font-family: 'Pacifico', cursive;
   font-size: 50px;
 }

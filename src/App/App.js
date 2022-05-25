@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import Reservations from '../../src/Reservations/Reservations'
+import Form from '../../src/Form/Form'
 
 class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       reservations: [],
     }
+    this.addReservation = this.addReservation.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     fetch('http://localhost:3001/api/v1/reservations')
     .then(response => {
       if(response.ok) {
@@ -19,22 +21,23 @@ class App extends Component {
         throw new Error('Something went wrong')
       }
     })
-    .then(data => console.log(data))
+    .then(reservations => this.setState(
+      { reservations: reservations }, () => {
+      console.log(this.state.reservations)}))
 
   }
 
+  addReservation = (resInfo) => {
+    console.log(resInfo)
+  }
 
 
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-
-        </div>
-        <div className='resy-container'>
-        <Reservations/>
-        </div>
+        <Form addReservation={this.addReservation}/>
+        <Reservations reservations={this.state.reservations} addReservation={this.addReservation}/>
       </div>
     )
   }
