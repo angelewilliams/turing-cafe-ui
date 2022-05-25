@@ -1,0 +1,23 @@
+.res-form {
+  padding: 8px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.res-form > input {
+  margin: 5px;
+}
+
+.res-form > button {
+  outline-color: none;
+  background-color: teal;
+  border: none;
+  color: white;
+  padding: 4px;
+  width: 80%;
+  border-radius: 3px;
+  cursor: pointer;
+}
