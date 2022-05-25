@@ -22,13 +22,13 @@ class App extends Component {
       }
     })
     .then(reservations => this.setState(
-      { reservations: reservations }, () => {
-      console.log(this.state.reservations)}))
+      { reservations: reservations }))
 
   }
 
   addReservation = (resInfo) => {
-    console.log(resInfo)
+    this.setState({ reservations: [...this.state.reservations, resInfo] }, () => {
+    console.log(this.state.reservations)});
   }
 
 

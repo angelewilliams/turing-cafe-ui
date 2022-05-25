@@ -1,9 +1,9 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({name, date, time, number, id}) => {
+const Card = ({id, name, date, time, number}) => {
   return (
-    <div className="res-card" id={id} >
+    <div className="res-card" id={id}>
       <h2>{name}</h2>
       <p>{date}</p>
       <p>{`${time} pm`}</p>
